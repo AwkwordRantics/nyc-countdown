@@ -4,9 +4,9 @@ from datetime import date
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-#now_pacific = datetime.now(ZoneInfo("America/Los_Angeles"))
-#if now_pacific.hour != 8:
-#    exit()  # not actually 8am Pacific right now -- this was the "wrong" trigger, do nothing
+now_pacific = datetime.now(ZoneInfo("America/Los_Angeles"))
+if now_pacific.hour != 8:
+    exit()  # not actually 8am Pacific right now -- this was the "wrong" trigger, do nothing
 
 CUTOFF = date(2028, 4, 1)
 START = date(2026, 8, 20)
@@ -32,7 +32,7 @@ def years_months_days_between(start, end):
 
 PEOPLE = [
     {"name": "Akitora", "phone": "5034388351", "birthday": (5, 21), "nyc_end": None},
-    #{"name": "Piper", "phone": "5036212546", "birthday": (9, 12), "nyc_end": None},
+    {"name": "Piper", "phone": "5036212546", "birthday": (9, 12), "nyc_end": None},
 ]
 
 SPECIAL_HOLIDAYS = {
