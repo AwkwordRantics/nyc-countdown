@@ -109,7 +109,7 @@ for person in PEOPLE:
     elif (today.month, today.day) in SPECIAL_HOLIDAYS:
         prefix = SPECIAL_HOLIDAYS[(today.month, today.day)]
     else:
-        prefix = "TEST HAPPY BIRTHDAY!!! DO SOMETHING ABOUT IT ALL"
+        prefix = ""
 
     if today > CUTOFF:
         message = prefix
