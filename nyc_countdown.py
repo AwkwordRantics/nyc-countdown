@@ -116,7 +116,7 @@ for person in PEOPLE:
     else:
         days_left = (CUTOFF - today).days
         day_number = (today - START).days
-        countdown = f"Day {day_number}  •  {days_left} more days"
+        countdown = f"Day {day_number}   |   {days_left} more days"
         message = (prefix + " " + countdown).strip()
 
     resp = requests.post('https://textbelt.com/text', {
