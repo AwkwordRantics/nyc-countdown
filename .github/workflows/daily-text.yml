@@ -1,0 +1,19 @@
+name: Daily NYC Countdown Text
+on:
+  schedule:
+    - cron: '0 15 * * *'   # 8am PDT (summer)
+    - cron: '0 16 * * *'   # 8am PST (winter)
+  workflow_dispatch:
+
+jobs:
+  send-text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - run: python nyc_countdown.py
+        env:
+          TEXTBELT_API_KEY: ${{ secrets.TEXTBELT_API_KEY }}
