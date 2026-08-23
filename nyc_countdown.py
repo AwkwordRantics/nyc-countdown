@@ -109,7 +109,7 @@ for person in PEOPLE:
     elif (today.month, today.day) in SPECIAL_HOLIDAYS:
         prefix = SPECIAL_HOLIDAYS[(today.month, today.day)]
     else:
-        prefix = ""
+        prefix = "TEST HAPPY BIRTHDAY!!! DO SOMETHING ABOUT IT ALL"
 
     if today > CUTOFF:
         message = prefix
@@ -117,7 +117,7 @@ for person in PEOPLE:
         days_left = (CUTOFF - today).days
         day_number = (today - START).days
         countdown = f"Day {day_number}\n{days_left} more days"
-        message = (prefix + " " + countdown).strip()
+        message = (prefix + " \n\n" + countdown).strip()
 
     resp = requests.post('https://textbelt.com/text', {
         'phone': person["phone"],
